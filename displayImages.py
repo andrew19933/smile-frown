@@ -10,7 +10,7 @@ path = "data/full_numpy_bitmap_smiley face.npy" # manually provide path for now
 try:
     data = np.load(path)
 except:
-    input("Error locating/finding specified file.")
+    input("Error locating/finding specified file.\nPress Enter to quit.")
     exit()
 
 # assumes data shape is (number of images, pixel in image)
@@ -19,7 +19,7 @@ except:
 # check that images are actually square
 root = np.sqrt(imgVecLength)
 if int(root + .5) ** 2 != imgVecLength:
-    input("Images aren't square")
+    input("Images aren't square.\nPress Enter to quit.")
     exit()
 else:
     imgSideLength = int(root)
