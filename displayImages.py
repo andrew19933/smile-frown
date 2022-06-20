@@ -15,6 +15,8 @@ except:
 
 # assumes data shape is (number of images, pixel in image)
 (numImages, imgVecLength) = data.shape
+
+# check that images are actually square
 root = np.sqrt(imgVecLength)
 if int(root + .5) ** 2 != imgVecLength:
     input("Images aren't square")
@@ -38,7 +40,6 @@ slidx = Slider(axidx, 'Image number', 0, numImages-1, valinit=idx0, valfmt='%d')
 def update(val):
     idx = slidx.val
     img.set_data(squareData[int(idx)])
-    # fig.canvas.draw_idle()
 slidx.on_changed(update)
 
 plt.show()
