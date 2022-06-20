@@ -5,8 +5,9 @@ from matplotlib import pyplot as plt
 from matplotlib.widgets import Slider
 
 
-# path = input("What is the path (relative or absolute) to the npy file of images to display?\n> ")
-path = "data/full_numpy_bitmap_smiley face.npy" # manually provide path for now
+path = input("What is the name of the .npy file in './data/' to display? (Exclude '.npy')\n> ")
+path = 'data/' + path + '.npy'
+# path = "data/upside_down_faces.npy" # manually provide path for now
 try:
     data = np.load(path)
 except:
